@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    tools:context=".AddContent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:weightSum="100"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ContentTitleInput"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="401dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:textColorHint="#734737"
+                app:boxStrokeColor="#734737"
+                app:cornerRadius="8dp"
+                app:hintTextColor="#734737"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:hint="عنوان المحتوى"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/notice"
+                android:layout_width="401dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/red"
+                android:text="* ملاحظة: يجب تعبئة المحتوى النصي او رابط الفيديو او الملف الصوتي من اجل نشر المحتوى" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ContentInput"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="401dp"
+                android:layout_height="450dp"
+                android:layout_gravity="center"
+                android:textColorHint="#734737"
+                app:boxStrokeColor="#734737"
+                app:cornerRadius="8dp"
+                app:hintTextColor="#734737"
+                tools:layout_editor_absoluteX="5dp"
+                tools:layout_editor_absoluteY="46dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="421dp"
+                    android:gravity="start"
+                    android:hint="المحتوى"
+                    android:inputType="textMultiLine" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ContentVideoInput"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="401dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:textColorHint="#734737"
+                app:boxStrokeColor="#734737"
+                app:cornerRadius="8dp"
+                app:hintTextColor="#734737"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="496dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:drawableLeft="@drawable/ic_video"
+                    android:hint="رابط الفيديو (YouTube)"
+                    android:inputType="textUri" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ContentSoundInput"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="401dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:textColorHint="#734737"
+                app:boxStrokeColor="#734737"
+                app:cornerRadius="8dp"
+                app:hintTextColor="#734737"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="536dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:drawableLeft="@drawable/ic_sound"
+                    android:hint="رابط الملف الصوتي (mp3)"
+                    android:inputType="textUri" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroupCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="القسم:"
+                    android:padding="16dp"
+                    android:layout_margin="5dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="فقه"
+                    android:button="@color/transparent"
+                    android:background="@drawable/radio_cat_selector"
+                    android:textColor="@drawable/radio_text"
+                    android:padding="16dp"
+                    android:onClick="selectCategory"
+                    android:layout_margin="5dp"/>
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="عقيدة"
+                    android:button="@color/transparent"
+                    android:background="@drawable/radio_cat_selector"
+                    android:textColor="@drawable/radio_text"
+                    android:padding="16dp"
+                    android:onClick="selectCategory"
+                    android:layout_margin="5dp"/>
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تفسير"
+                    android:button="@color/transparent"
+                    android:background="@drawable/radio_cat_selector"
+                    android:textColor="@drawable/radio_text"
+                    android:padding="16dp"
+                    android:onClick="selectCategory"
+                    android:layout_margin="5dp"/>
+
+
+            </RadioGroup>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ContentNameInput"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="401dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:textColorHint="#734737"
+                app:boxStrokeColor="#734737"
+                app:cornerRadius="8dp"
+                app:hintTextColor="#734737"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="496dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_person"
+                    android:hint="اسم الشيخ"
+                    android:inputType="textPersonName" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonUpPhoto"
+                    android:layout_width="160dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#734737"
+                    android:drawableRight="@drawable/ic_add"
+                    android:text="اختيار صورة"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:cornerRadius="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.633" />
+                <ImageView
+                    android:id="@+id/imgUpload"
+                    android:layout_width="192dp"
+                    android:layout_height="192dp" />
+            </LinearLayout>
+
+
+
+
+
+            <Button
+                android:id="@+id/buttonContent"
+                android:layout_width="162dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#734737"
+                android:text="نشر المحتوى"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.633" />
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/naviAdBar"
+            android:background="#734737"
+            app:itemIconTint="@drawable/navigation_view_colored"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_menu"/>
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layoutDirection="rtl"
+    android:layout_height="match_parent"
+    tools:context=".SingleContent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:id="@+id/topBar"
+            android:layout_height="75dp"
+            android:background="#734737"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/backBTN"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/white" />
+            <ImageButton
+                android:id="@+id/bookmarkBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layoutDirection="ltr"
+                android:layout_marginEnd="300dp"
+                android:background="@color/transparent"
+                android:onClick="bookMarkB"
+                app:srcCompat="@drawable/ic_baseline_bookmark_border_24"
+                app:tint="@color/white" />
+
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/PostTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/lotuslinotype_bold"
+                    android:textSize="35dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/content_title"
+                    android:text="عنوان الموضوع" />
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:id="@+id/youtube_player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp" />
+
+                <LinearLayout
+                    android:id="@+id/paddedLinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/shape_player"
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <ImageView
+                        android:clickable="true"
+                        android:id="@+id/imgPlay"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/play_pause_bg"
+                        android:src="@drawable/ic_play_arrow_white_24dp"
+                        android:focusable="true" />
+                    <ImageView
+                        android:clickable="true"
+                        android:id="@+id/imgPause"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/play_pause_bg"
+                        android:src="@drawable/ic_pause_white_24dp"
+                        android:visibility="gone"
+                        android:focusable="true" />
+                    <LinearLayout
+                        android:id="@+id/containerLinearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtTime"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="16dp"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            android:text="00:00:00 / 00:00:00"
+                            android:layout_marginRight="16dp" />
+                        <SeekBar
+                            android:id="@+id/seekBar"
+                            android:layout_width="225dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="4dp"
+                            android:progressTint="@color/white"
+                            android:progressBackgroundTint="@color/white"
+                            android:thumbTint="#3c2c26 "
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginLeft="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ViewText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/lotuslinotype_light"
+                    android:text="نص المقال" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bottom_bar_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/Viewname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:text="اسم الشيخ: " />
+                        <TextView
+                            android:id="@+id/NScholar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:layout_marginRight="5dp"
+                            android:text="اسم الشيخ هنا" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/Viewtags"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:text="الوسوم: " />
+
+                        <androidx.gridlayout.widget.GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/RCat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@drawable/tags"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="التصنيف" />
+
+                            <TextView
+                                android:id="@+id/RType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@drawable/tags"
+                                android:textSize="20dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="نوع المحتوى" />
+
+                            <TextView
+                                android:id="@+id/Rscol"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@drawable/tags"
+                                android:textSize="20dp"
+                                android:text="اسم الشيخ" />
+                        </androidx.gridlayout.widget.GridLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

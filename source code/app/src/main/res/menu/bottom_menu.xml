@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/Menum">
+
+    <item android:title="الرئيسية"
+        android:icon="@drawable/ic_home_24"
+        android:id="@+id/home_BTN"/>
+    <item android:title="البحث"
+        android:icon="@drawable/ic_search"
+        android:id="@+id/search_BTN"/>
+    <item android:title="اضافة محتوى"
+        android:icon="@drawable/ic_add"
+        android:id="@+id/addC_BTN"/>
+    <item android:title="المفضلة"
+        android:icon="@drawable/ic_baseline_bookmark_24"
+        android:id="@+id/bookmark_BTN"/>
+
+</menu>
